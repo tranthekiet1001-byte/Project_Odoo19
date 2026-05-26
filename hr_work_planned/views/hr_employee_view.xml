@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_employee_form_work_planned" model="ir.ui.view">
+        <field name="name">hr.employee.form.work.planned</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//notebook" position="inside">
+                <page string="Work Planned">
+                    <group>
+                        <field name="planned_hours" widget="float_time" readonly="1"/>
+                    </group>
+
+                    <field name="work_planned_ids" context="{'default_employee_id': id}">
+                        <list editable="bottom">
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="planned_hours" widget="float_time" readonly="1"/>
+                            <field name="status"/>
+                            <field name="description"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
