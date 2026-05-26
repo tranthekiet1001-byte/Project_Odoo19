@@ -1,2 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_remote_work_request_user,access_remote_work_request_user,model_a_remote_work_request,base.group_user,1,1,1,1
