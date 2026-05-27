@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Top menu item -->
+    <menuitem id="menu_hr_overtime_root"
+              name="Overtime"
+              web_icon="hr_timesheet,static/description/icon_timesheet.png"
+              sequence="100"/>
+
+    <menuitem id="menu_hr_overtime"
+              name="Overtime Requests"
+              parent="menu_hr_overtime_root"
+              action="action_hr_overtime"
+              sequence="10"/>
+
+    <!-- Approvals Menu -->
+    <record id="action_hr_overtime_approvals" model="ir.actions.act_window">
+        <field name="name">Overtime Approvals</field>
+        <field name="res_model">hr.overtime</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('state', 'in', ['submitted', 'approved', 'rejected'])]</field>
+        <field name="context">{'search_default_group_by_state': 1}</field>
+    </record>
+
+    <menuitem id="menu_hr_overtime_approvals"
+              name="Approvals"
+              parent="menu_hr_overtime_root"
+              action="action_hr_overtime_approvals"
+              sequence="20"
+              groups="hr.group_hr_user"/>
+</odoo>
