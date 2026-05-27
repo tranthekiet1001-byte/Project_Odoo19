@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_work_request_employee,hr.work.request (Employee),model_hr_work_request,base.group_user,1,1,1,1
+access_hr_work_request_manager,hr.work.request (Manager),model_hr_work_request,hr_attendance.group_hr_attendance_manager,1,1,1,1
+access_hr_work_request_wizard,hr.work.request.refuse.wizard,model_hr_work_request_refuse_wizard,base.group_user,1,1,1,1
