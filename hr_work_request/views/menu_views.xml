@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ====================================================================
+         Menu — gắn dưới menu Attendances hiện có
+    ===================================================================== -->
+
+    <!-- Menu cha: "Đơn làm việc" (dưới Attendances) -->
+    <menuitem id="menu_hr_work_request_root"
+              name="Đơn làm việc"
+              parent="hr_attendance.menu_hr_attendance_root"
+              sequence="20"/>
+
+    <!-- Sub-menu: Đơn của tôi -->
+    <menuitem id="menu_hr_work_request_my"
+              name="Đơn của tôi"
+              parent="menu_hr_work_request_root"
+              action="hr_work_request_action"
+              sequence="10"/>
+
+    <!-- Sub-menu: Duyệt đơn (chỉ Manager thấy) -->
+    <menuitem id="menu_hr_work_request_manager"
+              name="Duyệt đơn"
+              parent="menu_hr_work_request_root"
+              action="hr_work_request_action_manager"
+              sequence="20"
+              groups="hr_attendance.group_hr_attendance_manager"/>
+
+</odoo>

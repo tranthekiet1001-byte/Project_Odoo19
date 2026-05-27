@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ====================================================================
+         Kế thừa form Employee — Thêm tab "Đơn làm việc"
+    ===================================================================== -->
+    <record id="hr_employee_view_form_work_request" model="ir.ui.view">
+        <field name="name">hr.employee.form.work.request.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Thêm smart button đếm số đơn -->
+            <div name="button_box" position="inside">
+                <button name="action_open_work_requests"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-file-text-o">
+                    <field name="work_request_count"
+                           widget="statinfo"
+                           string="Đơn làm việc"/>
+                </button>
+            </div>
+
+            <!-- Thêm tab "Đơn làm việc" vào notebook -->
+            <notebook position="inside">
+                <page string="Đơn làm việc" name="work_requests">
+                    <field name="work_request_ids">
+                        <list string="Đơn làm việc"
+                              decoration-info="state == 'confirm'"
+                              decoration-success="state == 'validate'"
+                              decoration-danger="state == 'refuse'">
+                            <field name="name"/>
+                            <field name="request_type" widget="badge"
+                                   decoration-info="request_type == 'online'"
+                                   decoration-warning="request_type == 'business_trip'"/>
+                            <field name="date_from" string="Từ ngày"/>
+                            <field name="date_to" string="Đến ngày"/>
+                            <field name="number_of_days" string="Số ngày"/>
+                            <field name="state" widget="badge"
+                                   decoration-info="state == 'confirm'"
+                                   decoration-success="state == 'validate'"
+                                   decoration-danger="state == 'refuse'"/>
+                        </list>
+                    </field>
+                </page>
+            </notebook>
+
+        </field>
+    </record>
+
+</odoo>
