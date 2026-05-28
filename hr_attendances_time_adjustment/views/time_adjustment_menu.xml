@@ -1,0 +1,16 @@
+<odoo>
+    <record id="action_attendance_time_adjustment" model="ir.actions.act_window">
+        <field name="name">Attendance Time Adjustments</field>
+        <field name="res_model">hr.attendance.time.adjustment</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="view_id" ref="view_attendance_time_adjustment_kanban"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create and manage attendance time adjustment requests.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_attendance_time_adjustment_root" name="Attendance Time Adjustment" sequence="10"/>
+    <menuitem id="menu_attendance_time_adjustment_requests" name="Requests" parent="menu_attendance_time_adjustment_root" action="action_attendance_time_adjustment" sequence="10"/>
+</odoo>

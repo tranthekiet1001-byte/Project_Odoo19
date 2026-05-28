@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_attendance_time_adjustment_user,access_attendance_time_adjustment_user,model_hr_attendance_time_adjustment,base.group_user,1,1,1,1
+access_remote_work_request_compat_user,access_remote_work_request_compat_user,model_a_remote_work_request,base.group_user,1,1,1,1
